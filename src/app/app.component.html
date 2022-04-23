@@ -1,0 +1,11 @@
+<div style="text-align:center">
+  <div>
+    <p>{{seconds}}</p>
+    <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+    <br />
+    <div class="takePicture" (click)="takePicture()" title="Take Picture"><i class="fa fa-camera"></i></div>
+  </div>
+</div>
+<div class="snapshot" *ngIf="webcamImage">
+  <img [src]="webcamImage.imageAsDataUrl" style="padding-left: 620px;" />
+</div>
